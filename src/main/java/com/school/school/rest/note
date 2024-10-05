@@ -1,0 +1,37 @@
+package com.school.school.rest;
+
+import com.school.school.model.Contact;
+import com.school.school.repository.ContactRepository;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@Controller
+@RequestMapping("/api/contact")
+public class ContactRestController {
+
+
+    private final ContactRepository contactRepository;
+
+    public ContactRestController(ContactRepository contactRepository) {
+        this.contactRepository = contactRepository;
+    }
+
+    @GetMapping("/getContact")
+    @ResponseBody
+    public List<Contact> getContact(@RequestParam("status") String status){
+        return contactRepository.findByStatus(status);
+    }
+
+    @GetMapping("/getAllContact")
+    @ResponseBody
+    public List<Contact> getAllContact(@RequestBody Contact contact){
+        if(contact.getStatus() != null){
+            return contactRepository.findByStatus(contact.getStatus());
+        }else{
+            return List.of();
+        }
+    }
+
+}

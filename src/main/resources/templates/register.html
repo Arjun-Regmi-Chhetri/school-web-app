@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="eng">
+<head th:replace="~{component/head::head}"></head>
+<body>
+
+<div th:replace="~{component/header::header}"></div>
+
+<!-- inner banner -->
+<section class="inner-banner py-5">
+    <div class="w3l-breadcrumb py-lg-5">
+        <div class="container pt-4 pb-sm-4">
+            <h4 class="inner-text-title pt-5">Register</h4>
+            <ul class="breadcrumbs-custom-path">
+                <li><a th:href="@{/home}">Home</a></li>
+                <li class="active"><i class="fas fa-angle-right"></i>Register</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- //inner banner -->
+
+<!-- contact block -->
+<section class="w3l-contact py-5" id="contact">
+    <div class="container py-md-5 py-4">
+        <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+            <h3 class="title-style">Registration Form</h3>
+        </div>
+        <div class="row login-block">
+            <div class="col-md-7 login-center">
+                <ul>
+                    <li class="alert alert-danger" role="alert" th:each="error : ${#fields.errors('person.*')}" th:text="${error}" />
+                </ul>
+                <form th:action="@{/public/register}" method="post" class="signin-form" th:object="${person}">
+                    <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+                        <p class="text-uppercase">Personal Details</p>
+                    </div>
+                    <div class="input-grids">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>
+                                    <input type="text" th:field="*{name}" placeholder="Name"
+                                           class="contact-input" />
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>
+                                    <input type="text" th:field="*{mobileNumber}" placeholder="Mobile Number"
+                                           class="contact-input" />
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>
+                                    <input type="text" th:field="*{email}" placeholder="Email"
+                                           class="contact-input" />
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>
+                                    <input type="password" th:field="*{password}" placeholder="Password"
+                                           class="contact-input" /> <br />
+                                </label>
+                                <small th:if="${#fields.hasErrors('password')}" class="text-danger" >
+                                    Password must contain at least one uppercase letter, one number, and one special character.
+                                </small>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>
+                                    <input type="password" th:field="*{confirmPassword}" placeholder="Confirm Password"
+                                           class="contact-input" />
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 login-center text-start">
+                        <button class="btn btn-style btn-style-3">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //contact block -->
+
+<div th:replace="~{component/footer::footer}"></div>
+<div th:replace="~{component/scripts::scripts}"></div>
+
+</body>
+</html>
