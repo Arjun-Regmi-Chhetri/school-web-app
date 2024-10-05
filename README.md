@@ -51,7 +51,7 @@ This project is a school portal application built using Spring Boot. It provides
 - Dashboard: 🖥️ Admins have access to a dedicated dashboard for managing contacts and user data.
 
 
- ![School](https://raw.githubusercontent.com/Arjun-Regmi-Chhetri/image/main/admin.png)
+
 
 
 ![School](https://raw.githubusercontent.com/Arjun-Regmi-Chhetri/image/main/admin.png)
