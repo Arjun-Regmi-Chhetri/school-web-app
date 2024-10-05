@@ -51,17 +51,13 @@ This project is a school portal application built using Spring Boot. It provides
 - Dashboard: 🖥️ Admins have access to a dedicated dashboard for managing contacts and user data.
 
 
-<<<<<<< HEAD
  ![School](https://raw.githubusercontent.com/Arjun-Regmi-Chhetri/image/main/admin.png)
 
-<table>
-   
-=======
+
 ![School](https://raw.githubusercontent.com/Arjun-Regmi-Chhetri/image/main/admin.png)
 
 <table>
 
->>>>>>> 421b113 (env file update)
   <tr>
     <td><img src="https://raw.githubusercontent.com/Arjun-Regmi-Chhetri/schoo-image/refs/heads/main/dark%20enable.png" /> </td>
     <td><img src="https://raw.githubusercontent.com/Arjun-Regmi-Chhetri/schoo-image/refs/heads/main/home%20page.png" /> </td>
@@ -106,8 +102,5 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 
 ## License
 
-<<<<<<< HEAD
+
 This project is licensed under the MIT [License](#LICENSE).
-=======
-This project is licensed under the MIT [License](#LICENSE).
->>>>>>> 421b113 (env file update)
